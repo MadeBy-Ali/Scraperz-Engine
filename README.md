@@ -2,6 +2,8 @@
 
 Scraperzy is a system with a powerful scraping engine and a P2P business model that mainly gather and sells modeled useful and centralized data.
 
+Complete Tech stack [here](https://docs.google.com/document/d/1Fc9I7jQohJbMZKdSAGt17-PgFUBYBsXwZ8PId2Na1kQ/edit?tab=t.0).
+
 ## Installation
 
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
