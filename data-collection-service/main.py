@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from scheduler.task import schedule_scraping_job
+from scheduler.task import schedule_scrapping_job
 
 import asyncio
 
@@ -13,5 +13,5 @@ async def root():
 @app.post("/start-scraping")
 async def start_scraping_job():
     # Trigger scraping job
-    asyncio.create_task(schedule_scraping_job())
+    asyncio.create_task(schedule_scrapping_job())
     return {"status": "Scraping job started!"}
