@@ -38,7 +38,7 @@ services:
   celery:
     build: .
     container_name: celery-worker
-    command: ["celery", "-A", "scheduler.tasks", "worker", "--loglevel=INFO"]
+    command: ["celery", "-A", "scheduler.task", "worker", "--loglevel=INFO"]
     depends_on:
       - redis
       - kafka
