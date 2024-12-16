@@ -8,8 +8,8 @@ from utils.validations import validate_data
 
 app = Celery(
     "tasks",
-    broker = "redis://localhost:6379/0",
-    backend = "redis://localhost:6379/0",
+    broker="redis://redis:6379/0",
+    backend="redis://redis:6379/0",
 )
 
 @app.task
