@@ -12,6 +12,10 @@ async def root():
 
 @app.post("/start-scraping")
 async def start_scraping_job():
-    # Trigger scraping job
-    asyncio.create_task(schedule_scrapping_job())
-    return {"status": "Scraping job started!"}
+    try:
+        print("Triggering scraping job...")
+        # Trigger Celery task (asynchronously)
+        schedule_scrapping_job.delay()
+        return {"status": "Scraping job started!"}
+    except Exception as e:
+        return {"status": "Error", "message": str(e)}

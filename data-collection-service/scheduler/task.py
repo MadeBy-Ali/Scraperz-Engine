@@ -15,18 +15,21 @@ app = Celery(
 @app.task
 def schedule_scrapping_job():
     try:
-        print("starting scrapping job...")
-        run_scrapper()
+        print("Starting scraping job...")
         
-        # scrape output
+        # Simulate scraper output
+        run_scrapper()  # Your scraping logic
         dummy_data = {"name": "Sample Product", "price": "10$", "url": "example.com"}
         
-        # validation before send topic
+        # Validate scraped data
         validated_data = validate_data(dummy_data)
-        if validate_data:
+        if validated_data:
+            print("Sending data to Kafka...")
             send_kafka_topic(topic="new-data-topic", data=validated_data)
-    except Exception as e :
-        print(f"Error scrapping job:{str(e)}")
+        else:
+            print("Data validation failed.")
+    except Exception as e:
+        print(f"Error during scraping job: {str(e)}")
         
 @app.task
 def retry_task():
