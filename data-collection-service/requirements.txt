@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+scrapy
+beautifulsoup4
+celery
+kafka-python
+pydantic
+tenacity
+redis
